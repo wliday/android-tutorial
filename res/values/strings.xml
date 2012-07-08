@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">
+        View显示窗口，此处为TextView.
+    </string>
+    <string name="app_name">PropertyAnimation</string>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#C0C0C0</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="blue">#00A7DB</color>
+    <color name="green">#00FF00</color>
+</resources>
