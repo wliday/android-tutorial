@@ -2,6 +2,7 @@ package net.mindlee.android.propertyanimation;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.animation.AnimatorSet.Builder;
 import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
@@ -33,17 +34,19 @@ public class PropertyAnimationActivity extends Activity {
 		m_atv = new MyAnimatableView(m_tv);
 	}
 
-	/* 
+	/*
 	 * 单个动画
 	 */
 	public void testObjectAnimator(View btnView) {
 		float width = m_tv.getWidth();
 		if (m_tv.getX() == 0) {
-			ObjectAnimator translationRight = ObjectAnimator.ofFloat(m_tv, "X", width);
+			ObjectAnimator translationRight = ObjectAnimator.ofFloat(m_tv, "X",
+					width);
 			translationRight.setDuration(1500);
 			translationRight.start();
 		} else {
-			ObjectAnimator translationLeft = ObjectAnimator.ofFloat(m_tv, "X", 0f);
+			ObjectAnimator translationLeft = ObjectAnimator.ofFloat(m_tv, "X",
+					0f);
 			translationLeft.setDuration(1500);
 			translationLeft.start();
 		}
@@ -57,26 +60,26 @@ public class PropertyAnimationActivity extends Activity {
 		float height = m_tv.getHeight();
 		ObjectAnimator translationRight = ObjectAnimator.ofFloat(m_tv, "X", width);
 		ObjectAnimator translationLeft = ObjectAnimator.ofFloat(m_tv, "X", 0f);
-		ObjectAnimator translationDown = ObjectAnimator.ofFloat(m_tv, "Y", height);
+		ObjectAnimator translationDown = ObjectAnimator.ofFloat(m_tv, "Y",
+				height);
 		ObjectAnimator translationUp = ObjectAnimator.ofFloat(m_tv, "Y", 0);
-			
+
 		AnimatorSet as = new AnimatorSet();
 		as.play(translationRight).before(translationLeft);
 		as.play(translationRight).with(translationDown);
-		as.play(translationLeft).with(translationUp);	
-		
-		//和上边四句等效，另一种写法
-		/*
+		as.play(translationLeft).with(translationUp);
+
+		// 和上边四句等效，另一种写法
+        /*
 		AnimatorSet as = new AnimatorSet();
 		as.playTogether(translationRight, translationDown);
 		as.playSequentially(translationRight, translationLeft);
 		as.playTogether(translationLeft, translationUp);
-		*/
-		
-		as.setDuration(1500); 
+        */
+		as.setDuration(1500);
 		as.start();
 	}
-	
+
 	/*
 	 * XML，便于代码重用
 	 */
@@ -88,7 +91,7 @@ public class PropertyAnimationActivity extends Activity {
 		set.start();
 	}
 
-	/* 
+	/*
 	 * 一个动画改变多个属性值
 	 */
 	public void testPropertyValuesHolder(View v) {
@@ -105,8 +108,8 @@ public class PropertyAnimationActivity extends Activity {
 
 		ObjectAnimator oa = ObjectAnimator.ofPropertyValuesHolder(m_tv, pvhX,
 				pvhY);
-		oa.setDuration(3000); 
-		//oa.setInterpolator(new AccelerateDecelerateInterpolator());
+		oa.setDuration(3000);
+		// oa.setInterpolator(new AccelerateDecelerateInterpolator());
 		oa.setInterpolator(new BounceInterpolator());
 		oa.start();
 	}
@@ -125,8 +128,8 @@ public class PropertyAnimationActivity extends Activity {
 		m_tv.setY(h);
 
 		ViewPropertyAnimator vpa = m_tv.animate().x(x).y(y);
-		
-		vpa.setDuration(1500); 
+
+		vpa.setDuration(1500);
 		vpa.setInterpolator(new BounceInterpolator());
 	}
 
@@ -162,7 +165,8 @@ public class PropertyAnimationActivity extends Activity {
 		Keyframe kf1 = Keyframe.ofFloat(0.5f, 30);
 		Keyframe kf2 = Keyframe.ofFloat(0.8f, 1080);
 		Keyframe kf3 = Keyframe.ofFloat(1f, 0);
-		PropertyValuesHolder pvhRotation = PropertyValuesHolder.ofKeyframe("rotation", kf0, kf1, kf2, kf3);
+		PropertyValuesHolder pvhRotation = PropertyValuesHolder.ofKeyframe(
+				"rotation", kf0, kf1, kf2, kf3);
 
 		PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat("x", w, x);
 		PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat("y", h, y);
