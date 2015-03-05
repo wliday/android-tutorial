@@ -21,12 +21,12 @@ You can get more information at[Android Property Animation][1]
 #####Author:
 li wei
 #####Blog:
-http://mindlee.net
+http://mindlee.com
 #####Mail:
 mindlee@me.com
 #截图
 ![alt text][screenshot1]
 
 
-[1]: http://mindlee.com/2012/07/08/android-property-animation/
-[screenshot1]: http://mindlee.com/uploads/2012/09/property_animation.jpg
+[1]: http://mindlee.github.io/2012/07/08/android-property-animation/
+[screenshot1]: http://mindlee.github.io/uploads/2012/09/property_animation.jpg
