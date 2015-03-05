@@ -28,5 +28,5 @@ mindlee@me.com
 ![alt text][screenshot1]
 
 
-[1]: http://mindlee.net/2012/07/08/android-property-animation/
-[screenshot1]: http://mindlee.net/wp-content/uploads/2012/09/property_animation.jpg
+[1]: http://mindlee.com/2012/07/08/android-property-animation/
+[screenshot1]: http://mindlee.com/uploads/2012/09/property_animation.jpg
