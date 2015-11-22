@@ -23,7 +23,7 @@ li wei
 #####Blog:
 http://mindlee.com
 #####Mail:
-mindlee@me.com
+liwei.day@gmail.com
 #截图
 ![alt text][screenshot1]
 
